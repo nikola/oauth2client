@@ -62,4 +62,4 @@ def code_challenge(verifier):
     Returns:
         Bytestring, representing a urlsafe base64-encoded sha256 hash digest.
     """
-    return base64.urlsafe_b64encode(hashlib.sha256(verifier).digest())
+    return base64.urlsafe_b64encode(hashlib.sha256(verifier).digest()).rstrip(b'=')
